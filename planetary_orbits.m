@@ -5,9 +5,9 @@ t=linspace(0,period,1000);
 x=zeros(length(t),length(e)); y=zeros(length(t),length(e));
 for j=1:length(e)
     for i=1:length(t)
-        E=fzero(@(E) omega * t(i) + e(j) * sin(E) - E ,0); % add anonymous function for root finding.  Make use of the variables e(j) and t(i) and omega.
-        x(i,j)= a(j) * (e(j) - cos(E)); % assign x-coordinate.  Make use of the variables a(j), e(j) and E.
-        y(i,j)= b(j) * sin(E); % assign y-coordinate.  Make use of the variables b(j) and E. 
+        E=fzero(@(E) omega * t(i) + e(j) * sin(E) - E ,0);
+        x(i,j)= a(j) * (e(j) - cos(E)); 
+        y(i,j)= b(j) * sin(E); 
     end
 end
 for j=1:length(e)
